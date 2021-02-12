@@ -7,34 +7,36 @@ public class Main {
 
     public static void main(String[] args) {
 
-        ArrayList <Electrodomesticos> lista = new ArrayList<Electrodomesticos>();
+        ArrayList<Electrodomesticos> listas = new ArrayList<Electrodomesticos>();
 
         Electrodomesticos e = new Electrodomesticos("Nacional", "A");
-        e.SaldoInicial();
-        e.TipoGeneral();
 
-        Televisores s= new Televisores("Nacional", "B", 60, "con");
-        s.SaldoTelevisores();
-        s.TipoTelevisor();
+        Electrodomesticos s = new Televisores("Nacional", "B", 60, true);
 
-        Neveras n = new Neveras("Importado", "C", 170);
-        n.SaldoNeveras();
-        n.TipoNevera();
+        Electrodomesticos n = new Neveras("Importado", "C", 170);
 
-        lista.add(e);
-        lista.add(s);
-        lista.add(n);
+        listas.add(e);
+        listas.add(s);
+        listas.add(n);
 
-        /*
-        System.out.println(e.toString());
-        System.out.println(s.toString());
-        System.out.println(n.toString());
-        */
-        System.out.println("Esta es la lista de electrodompesticos comprados" + lista);
+        double TotalT = 0;
+        double TotalN = 0;
+        double TotalOtros = 0;
+
+        for (Electrodomesticos lista : listas) {
+            if (lista instanceof Neveras) {
+                TotalN = TotalN + lista.getPrecio();
+            } else if (lista instanceof Televisores) {
+                TotalT = TotalT + lista.getPrecio();
+            } else {
+                TotalOtros = TotalOtros + lista.getPrecio();
+            }
+        }
+        System.out.println("Valor total de televisores = " + TotalT);
+        System.out.println("Valor total de Neveras = " + TotalN);
+        System.out.println("Valor total de otros electrodomésticos = " + TotalOtros);
 
 
-
-
-
+        System.out.println("Esta es la lista de electrodompesticos comprados" + listas);
     }
 }

@@ -1,58 +1,55 @@
 package empresaElectrodomesticos;
 
 public class Electrodomesticos {
-    protected String Procedencia;
-    protected  String Consumo;
-    public  double Precio;
-    private String  Tipo;
+    protected String procedencia;
+    protected  String consumo;
+    public  double precio;
 
-    public Electrodomesticos(String Procedencia, String Consumo)
+    public Electrodomesticos(String procedencia, String consumo)
     {
-        this.Procedencia = Procedencia;
-        this.Consumo = Consumo;
+        this.procedencia = procedencia;
+        this.consumo = consumo;
+        SaldoInicial();
+    }
+
+    public double getPrecio() {
+        return precio;
     }
 
     public double SaldoInicial()
     {
-        if(Procedencia == "Nacional")
+        if(procedencia == "Nacional")
         {
-            Precio = 250000;
+            precio = 250000;
         }
-        else if(Procedencia == "Importado")
+        else if(procedencia == "Importado")
         {
-            Precio = 350000;
+            precio = 350000;
         }
         else
         {
             System.out.println("Ingrese una opción correcta.");
         }
 
-        if(Consumo == "A")
+        if(consumo == "A")
         {
-            Precio += 450000;
-            System.out.println("Tipo consumo A: " + Precio);
+            precio += 450000;
+            System.out.println("Tipo consumo A: " + precio);
         }
-        else if (Consumo == "B")
+        else if (consumo == "B")
         {
-            Precio += 350000;
-            System.out.println("Tipo consumo B: " + Precio);
+            precio += 350000;
+            System.out.println("Tipo consumo B: " + precio);
         }
-        else if(Consumo == "C")
+        else if(consumo == "C")
         {
-            Precio += 250000;
-            System.out.println("Tipo consumo C: " + Precio);
+            precio += 250000;
+            System.out.println("Tipo consumo C: " + precio);
         }
         else
         {
             System.out.println("Ingrese una opcion correcta.");
         }
-        return Precio;
+        return precio;
     }
-
-    public void TipoGeneral()
-    {
-        Tipo = "Otros";
-    }
-
-
 }

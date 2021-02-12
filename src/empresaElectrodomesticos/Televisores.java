@@ -2,44 +2,29 @@ package empresaElectrodomesticos;
 
 public class Televisores extends Electrodomesticos
 {
-    private double Pulgadas;
-    private String Tdt;
-    private String Tipo;
+    private double pulgadas;
+    private boolean tdt;
 
-    public Televisores(String Procedencia, String Consumo, double Pulgadas, String Tdt)
+    public Televisores(String procedencia, String consumo, double pulgadas, boolean tdt)
     {
-        super(Procedencia, Consumo);
-        this.Pulgadas=Pulgadas;
-        this.Tdt=Tdt;
+        super(procedencia, consumo);
+        this.pulgadas =pulgadas;
+        this.tdt =tdt;
+        SaldoTelevisores();
     }
 
-    public void TipoTelevisor()
+    public double SaldoTelevisores()
     {
-        Tipo = "Televisores";
-    }
+        super.SaldoInicial();
+        if(pulgadas >40)
+        {
+            super.precio += (super.precio *0.3);
+        }
 
-    public void SaldoTelevisores()
-    {
-        if(Pulgadas>40)
+        if(tdt = true)
         {
-            Precio += (Precio*0.3);
+            super.precio +=  250000;
         }
-        else
-        {
-            Precio=Precio;
-        }
-        if(Tdt == "con")
-        {
-            Precio += 250000;
-        }
-        else if(Tdt == "sin")
-        {
-            Precio=Precio;
-        }
-        else
-        {
-            System.out.println("Ingrese una palabra correcta.");
-        }
+        return precio;
     }
-
 }

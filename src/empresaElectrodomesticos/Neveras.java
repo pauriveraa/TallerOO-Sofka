@@ -1,41 +1,25 @@
 package empresaElectrodomesticos;
 
-public class Neveras extends Electrodomesticos
-{
-    private double Capacidad;
-    private String Tipo;
+public class Neveras extends Electrodomesticos {
+    private double capacidad;
 
-    public Neveras(String Procedencia, String Consumo, double Capacidad)
-    {
-        super(Procedencia, Consumo);
-        this.Capacidad = Capacidad;
+    public Neveras(String procedencia, String consumo, double capacidad) {
+        super(procedencia, consumo);
+        this.capacidad = capacidad;
+        SaldoNeveras();
     }
 
-    public void TipoNevera()
-    {
-        Tipo = "Nevera";
-    }
-
-    public void SaldoNeveras()
-    {
+    public double SaldoNeveras() {
         super.SaldoInicial();
-        if(Capacidad>120)
-        {
-            double temp=0;
-            temp = (Capacidad-120)/10;
-            if(temp == 0)
-            {
-                Precio=Precio;
-            }
-            else
-            {
-                Precio += (temp*(0.05*Precio));
+        if (capacidad > 120) {
+            double temp = 0;
+            temp = (capacidad - 120) / 10;
+            if (temp == 0) {
+                System.out.println("No hay adición por capacidad superior.");
+            } else {
+                super.precio += (temp * (0.05 * super.precio));
             }
         }
-        else
-        {
-            Precio=Precio;
-        }
-
+        return precio;
     }
 }
