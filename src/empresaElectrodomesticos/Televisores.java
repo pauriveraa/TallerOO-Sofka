@@ -16,15 +16,17 @@ public class Televisores extends Electrodomesticos
     public double SaldoTelevisores()
     {
         super.SaldoInicial();
-        if(pulgadas >40)
-        {
-            super.precio += (super.precio *0.3);
-        }
 
         if(tdt = true)
         {
             super.precio +=  250000;
         }
+
+        if(pulgadas >40)
+        {
+            super.precio += (super.precio *0.3);
+        }
+
         return precio;
     }
 }

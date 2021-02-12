@@ -10,9 +10,7 @@ public class Main {
         ArrayList<Electrodomesticos> listas = new ArrayList<Electrodomesticos>();
 
         Electrodomesticos e = new Electrodomesticos("Nacional", "A");
-
         Electrodomesticos s = new Televisores("Nacional", "B", 60, true);
-
         Electrodomesticos n = new Neveras("Importado", "C", 170);
 
         listas.add(e);
@@ -35,7 +33,6 @@ public class Main {
         System.out.println("Valor total de televisores = " + TotalT);
         System.out.println("Valor total de Neveras = " + TotalN);
         System.out.println("Valor total de otros electrodomésticos = " + TotalOtros);
-
 
         System.out.println("Esta es la lista de electrodompesticos comprados" + listas);
     }

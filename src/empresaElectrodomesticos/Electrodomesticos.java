@@ -34,17 +34,14 @@ public class Electrodomesticos {
         if(consumo == "A")
         {
             precio += 450000;
-            System.out.println("Tipo consumo A: " + precio);
         }
         else if (consumo == "B")
         {
             precio += 350000;
-            System.out.println("Tipo consumo B: " + precio);
         }
         else if(consumo == "C")
         {
             precio += 250000;
-            System.out.println("Tipo consumo C: " + precio);
         }
         else
         {
