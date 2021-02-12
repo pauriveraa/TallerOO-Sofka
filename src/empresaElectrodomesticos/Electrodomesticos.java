@@ -3,7 +3,8 @@ package empresaElectrodomesticos;
 public class Electrodomesticos {
     protected String Procedencia;
     protected  String Consumo;
-    protected  double Precio = 0;
+    public  double Precio;
+    private String  Tipo;
 
     public Electrodomesticos(String Procedencia, String Consumo)
     {
@@ -11,7 +12,7 @@ public class Electrodomesticos {
         this.Consumo = Consumo;
     }
 
-    public void SaldoInicial()
+    public double SaldoInicial()
     {
         if(Procedencia == "Nacional")
         {
@@ -45,6 +46,12 @@ public class Electrodomesticos {
         {
             System.out.println("Ingrese una opcion correcta.");
         }
+        return Precio;
+    }
+
+    public void TipoGeneral()
+    {
+        Tipo = "Otros";
     }
 
 

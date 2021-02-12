@@ -4,6 +4,7 @@ public class Televisores extends Electrodomesticos
 {
     private double Pulgadas;
     private String Tdt;
+    private String Tipo;
 
     public Televisores(String Procedencia, String Consumo, double Pulgadas, String Tdt)
     {
@@ -11,9 +12,14 @@ public class Televisores extends Electrodomesticos
         this.Pulgadas=Pulgadas;
         this.Tdt=Tdt;
     }
-    public void Saldo()
+
+    public void TipoTelevisor()
     {
-        SaldoInicial();
+        Tipo = "Televisores";
+    }
+
+    public void SaldoTelevisores()
+    {
         if(Pulgadas>40)
         {
             Precio += (Precio*0.3);
